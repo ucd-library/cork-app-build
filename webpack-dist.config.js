@@ -14,7 +14,10 @@ module.exports = (config) => {
         modules: [path.resolve(config.root, config.clientModules)]
       },
       resolveLoader : {
-        modules: [path.resolve(__dirname, 'node_modules')]
+        modules: [
+          path.resolve(__dirname, 'node_modules'),
+          path.resolve(__dirname, '..', '..')
+        ]
       },
       module : {
         rules: [
@@ -54,7 +57,10 @@ module.exports = (config) => {
         modules: [path.resolve(config.root, config.clientModules)]
       },
       resolveLoader : {
-        modules: [path.resolve(__dirname, 'node_modules')]
+        modules: [
+          path.resolve(__dirname, 'node_modules'),
+          path.resolve(__dirname, '..', '..')
+        ]
       },
       module : {
         rules: [
