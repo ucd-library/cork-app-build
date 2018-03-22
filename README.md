@@ -6,7 +6,7 @@ Webpack + Babel build for UCD Polymer 3+ apps
 In your project install both webpack and this project
 
 ```bash
-npm install --save-dev webpack-cli
+npm install --save-dev webpack webpack-cli
 npm install --save-dev @ucd-lib/cork-app-build
 ```
 
