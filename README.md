@@ -14,11 +14,21 @@ npm install --save-dev @ucd-lib/cork-app-build
 
 Example watch script: webpack-watch.config.js
 
+The watch script builds a version of the elements that are compatable with modern
+browsers.  The watch script will watch all file resources and rebuild the bundle
+whenever a change is made.
+
 ```js
 let config = require('@ucd-lib/cork-app-build').watch({
+  // root directory, all paths below will be relative to root
   root : __dirname,
+  // path to your entry .js file
   entry : 'public/elements/entry-element.js',
+  // folder where bundle.js will be written
   preview : 'public',
+  // path your client (most likely installed via yarn) node_modules folder.
+  // Due to the flat:true flag of yarn, it's normally best to separate 
+  // client code/libraries from all other modules (ex: build tools such as this).
   clientModules : 'public/node_modules'
 });
 
@@ -27,11 +37,20 @@ module.exports = config;
 
 Example dist script: webpack-dist.config.js
 
+The dist script creates minified code for both modern browsers as well as 
+a special bundle for Internet Explorer (of course...).
+
 ```js
 let config = require('@ucd-lib/cork-app-build').dist({
+  // root directory, all paths below will be relative to root
   root : __dirname,
+  // path to your entry .js file
   entry : 'public/elements/entry-element.js',
+  // folder where bundle.js and ie-bundle.js will be written
   dist : 'dist',
+  // path your client (most likely installed via yarn) node_modules folder.
+  // Due to the flat:true flag of yarn, it's normally best to separate 
+  // client code/libraries from all other modules (ex: build tools such as this).
   clientModules : 'public/node_modules'
 });
 
