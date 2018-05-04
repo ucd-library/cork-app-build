@@ -32,6 +32,11 @@ let config = require('@ucd-lib/cork-app-build').watch({
   clientModules : 'public/node_modules'
 });
 
+// optionaly you can run:
+// require('@ucd-lib/cork-app-build').watch(config, true)
+// Adding the second flag will generate a ie build as well as a modern
+// build when in development.  Note this slows down the build process.
+
 module.exports = config;
 ```
 
@@ -56,6 +61,10 @@ let config = require('@ucd-lib/cork-app-build').dist({
 
 module.exports = config;
 ```
+
+## Babel Polyfill
+
+The IE build automatically adds the [babel-polyfill dependency](https://babeljs.io/docs/usage/polyfill/).  Since this is a client side library, you need to add it via `yarn add babel-polyfill`.  It will only be added to the IE build.  
 
 ## Run watch/dist
 
