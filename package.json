@@ -1,6 +1,6 @@
 {
   "name": "@ucd-lib/cork-app-build",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "index.js",
   "repository": "git@github.com:UCDavisLibrary/cork-app-build.git",
   "author": "Justin Merz <jrmerz@ucdavis.edu>",
@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.6",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
