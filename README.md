@@ -1,13 +1,12 @@
 # cork-app-build
-Webpack + Babel build for UCD Polymer 3+ apps
+Webpack + Babel build for UCD Web Component apps
 
 ## Install
 
 In your project install both webpack and this project
 
 ```bash
-npm install --save-dev webpack webpack-cli
-npm install --save-dev @ucd-lib/cork-app-build
+npm install --save-dev webpack webpack-cli @ucd-lib/cork-app-build
 ```
 
 ## Create build config scripts
@@ -25,11 +24,12 @@ let config = require('@ucd-lib/cork-app-build').watch({
   // path to your entry .js file
   entry : 'public/elements/entry-element.js',
   // folder where bundle.js will be written
-  preview : 'public',
+  preview : 'public/js',
   // path your client (most likely installed via yarn) node_modules folder.
-  // Due to the flat:true flag of yarn, it's normally best to separate 
-  // client code/libraries from all other modules (ex: build tools such as this).
-  clientModules : 'public/node_modules'
+  // It's  best to separate client code/libraries from all other modules (ex: build tools such as this).
+  clientModules : 'public/node_modules',
+  // show babel debug in console log
+  babelDebug : true
 });
 
 // optionaly you can run:
@@ -52,19 +52,30 @@ let config = require('@ucd-lib/cork-app-build').dist({
   // path to your entry .js file
   entry : 'public/elements/entry-element.js',
   // folder where bundle.js and ie-bundle.js will be written
-  dist : 'dist',
+  dist : 'dist/js',
   // path your client (most likely installed via yarn) node_modules folder.
-  // Due to the flat:true flag of yarn, it's normally best to separate 
-  // client code/libraries from all other modules (ex: build tools such as this).
+  // It's  best to separate client code/libraries from all other modules (ex: build tools such as this).
   clientModules : 'public/node_modules'
 });
+
+// optionaly you can run:
+// require('@ucd-lib/cork-app-build').dist(config, true)
+// Adding the second flag will generate a ie build as well as a modern
+// build when in development.  Note this slows down the build process.
 
 module.exports = config;
 ```
 
+
 ## Babel Polyfill
 
-The IE build automatically adds the [babel-polyfill dependency](https://babeljs.io/docs/usage/polyfill/).  Since this is a client side library, you need to add it via `yarn add babel-polyfill`.  It will only be added to the IE build.  
+The IE build automatically adds the [babel-polyfill dependency](https://babeljs.io/docs/usage/polyfill/).
+
+## Production Babel Presets
+
+Information on the presets used in Babel for production builds:
+ - https://babeljs.io/docs/en/babel-preset-env
+ - https://github.com/browserslist/browserslist
 
 ## Run watch/dist
 
