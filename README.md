@@ -29,6 +29,7 @@ let config = require('@ucd-lib/cork-app-build').watch({
   // path your client (most likely installed via yarn) node_modules folder.
   // Due to the flat:true flag of yarn, it's normally best to separate 
   // client code/libraries from all other modules (ex: build tools such as this).
+  // will take an array of relative paths as well
   clientModules : 'public/node_modules'
 });
 
@@ -56,6 +57,7 @@ let config = require('@ucd-lib/cork-app-build').dist({
   // path your client (most likely installed via yarn) node_modules folder.
   // Due to the flat:true flag of yarn, it's normally best to separate 
   // client code/libraries from all other modules (ex: build tools such as this).
+  // will take an array of relative paths as well
   clientModules : 'public/node_modules'
 });
 
