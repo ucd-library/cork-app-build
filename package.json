@@ -1,6 +1,6 @@
 {
   "name": "@ucd-lib/cork-app-build",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "index.js",
   "repository": "git@github.com:UCDavisLibrary/cork-app-build.git",
   "author": "Justin Merz <jrmerz@ucdavis.edu>",
