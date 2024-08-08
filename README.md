@@ -1,13 +1,12 @@
 # cork-app-build
-Webpack + Babel build for UCD Polymer 3+ apps
+Webpack build for UCD Library SPA applications/websites
 
 ## Install
 
 In your project install both webpack and this project
 
 ```bash
-npm install --save-dev webpack webpack-cli
-npm install --save-dev @ucd-lib/cork-app-build
+npm install --save-dev webpack webpack-cli @ucd-lib/cork-app-build
 ```
 
 ## Create build config scripts
@@ -63,10 +62,6 @@ let config = require('@ucd-lib/cork-app-build').dist({
 
 module.exports = config;
 ```
-
-## Babel Polyfill
-
-The IE build automatically adds the [babel-polyfill dependency](https://babeljs.io/docs/usage/polyfill/).  Since this is a client side library, you need to add it via `yarn add babel-polyfill`.  It will only be added to the IE build.  
 
 ## Run watch/dist
 
